@@ -1,0 +1,22 @@
+<h1>Welcome to the Longest Word Game</h1>
+<h2>Here is your Grid</h2>
+<div class="wrapper">
+  <div class="box"><%= @letters[0].upcase %></div>
+  <div class="box"><%= @letters[1].upcase %></div>
+  <div class="box"><%= @letters[2].upcase %></div>
+  <div class="box"><%= @letters[3].upcase %></div>
+  <div class="box"><%= @letters[4].upcase %></div>
+  <div class="box"><%= @letters[5].upcase %></div>
+  <div class="box"><%= @letters[6].upcase %></div>
+  <div class="box"><%= @letters[7].upcase %></div>
+  <div class="box"><%= @letters[8].upcase %></div>
+  <div class="box"><%= @letters[9].upcase %></div>
+</div>
+<br>
+<h2>What is the longest word you can find?</h2>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :possible_letters, @letters %>
+  <input type="text" style="font-size: 18pt; height: 40px; width:80%; " name="word"  value="<%= params[:word] %>" placeholder="Your word here">
+  <input type="submit" style="font-size: 18pt; height:40px; width:100px" value="Play">
+</form>
